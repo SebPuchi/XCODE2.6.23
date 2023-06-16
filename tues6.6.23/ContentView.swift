@@ -10,43 +10,54 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-       
+        NavigationView{
+
         
         ZStack{
-            Color.gray.ignoresSafeArea()
             
-           
+            Color(.black).ignoresSafeArea()
+            
             
             VStack {
                 
-                Spacer()
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-                Spacer()
-                Button("Push Me") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                Text("A Game By \nSebastian  Pucher").font(.custom("ArcadeClassic", size: 25)).foregroundColor(Color.red).multilineTextAlignment(.center)
+                
+                
+                
+                
+                NavigationLink(destination: SelectionPage()) {
+                    Text("Go to Second View")
+                        .font(.headline)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
                 
-                Spacer()
                 
-                HStack{
-                    Spacer()
-                    
-                    Text("Sebastian Pucher").font(.custom("ArcadeClassic", size: 20))}
-              
-
-               
+                
+                
+                
+                
+                
+                
+                
             }
+                
+                
+            }
+            
+         
+               
+            
+          
         }
         
         
         
         
  
-       
-        .padding()
+    
     }
     
     init(){
