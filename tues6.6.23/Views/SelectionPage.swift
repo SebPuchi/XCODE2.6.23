@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct SelectionPage: View {
+    
+
+    
     var body: some View {
         
+        
+            
         ZStack{
+            
           Color(.black).ignoresSafeArea()
             
             Text("Whattup")
@@ -18,7 +24,7 @@ struct SelectionPage: View {
             
             
             
-        }
+        }.navigationBarBackButtonHidden(true)
         
         
     }
@@ -26,6 +32,8 @@ struct SelectionPage: View {
 
 struct SelectionPage_Previews: PreviewProvider {
     static var previews: some View {
+        
         SelectionPage()
+        
     }
 }

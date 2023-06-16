@@ -26,6 +26,8 @@ struct ContentView: View {
                 
                 
                 NavigationLink(destination: SelectionPage()) {
+                    
+                    
                     Text("Go to Second View")
                         .font(.headline)
                         .padding()
@@ -34,7 +36,7 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
                 
-                
+               
                 
                 
                 
