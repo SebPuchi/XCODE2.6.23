@@ -27,16 +27,7 @@ struct SelectionPage: View {
                     .foregroundColor(Color.white)
                 
                 
-                NavigationLink(destination: ContentView ()) {
-                    
-                    
-                    Text("Return")
-                        .font(.headline)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+              
                 
                 
                 
@@ -47,7 +38,7 @@ struct SelectionPage: View {
             
             
             
-        }.navigationBarBackButtonHidden(true)
+        }
         
         
     }

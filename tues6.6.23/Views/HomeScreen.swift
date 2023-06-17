@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeScreen: View {
     var body: some View {
         
         NavigationView{
@@ -23,13 +23,27 @@ struct ContentView: View {
                 
                 
                 Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                
+             
                 
                 NavigationLink(destination: SelectionPage()) {
                     
                     
-                    Image("BeginRed").resizable().scaledToFit().frame(width: 200.0) 
+                    Image("BeginRed").resizable().scaledToFit().frame(width: 175.0
+                    )
+
+                }.padding(.bottom, 15.0)
+                
+                NavigationLink(destination: PalleteSelection()) {
+                    
+                    
+                    Image("PaletteRed").resizable().scaledToFit().frame(width: 175.0)
 
                 }
+    
                 
                 
                 
@@ -91,6 +105,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeScreen()
     }
 }
