@@ -20,44 +20,51 @@ struct ContentView: View {
             
             VStack {
                 
-                Text("A Game By \nSebastian  Pucher").font(.custom("ArcadeClassic", size: 25)).foregroundColor(Color.red).multilineTextAlignment(.center)
                 
                 
-                
+                Spacer()
                 
                 NavigationLink(destination: SelectionPage()) {
                     
                     
-                    Text("Go to Second View")
-                        .font(.headline)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                    Image("BeginRed").resizable().scaledToFit().frame(width: 200.0) 
+
                 }
                 
-               
                 
                 
                 
+                Spacer()
                 
+                HStack{
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    
+                    Text("Sebastian  Pucher").font(.custom("ArcadeClassic", size: 25)).foregroundColor(Color.red).multilineTextAlignment(.center)
+                    
+                    Spacer()
+                    
+                }
+                
+
                 
                 
                 
             }
+          
                 
                 
             }
             
-         
-               
-            
+     
           
         }
-        
-        
-        
-        
+    
  
     
     }

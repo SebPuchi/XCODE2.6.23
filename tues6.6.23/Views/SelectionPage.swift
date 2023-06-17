@@ -19,8 +19,31 @@ struct SelectionPage: View {
             
           Color(.black).ignoresSafeArea()
             
-            Text("Whattup")
-                .foregroundColor(Color.white)
+            
+            VStack{
+                
+                
+                Text("Whattup")
+                    .foregroundColor(Color.white)
+                
+                
+                NavigationLink(destination: ContentView ()) {
+                    
+                    
+                    Text("Return")
+                        .font(.headline)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                
+                
+                
+                
+            }
+            
+         
             
             
             
