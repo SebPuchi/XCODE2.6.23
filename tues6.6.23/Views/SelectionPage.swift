@@ -21,10 +21,33 @@ struct SelectionPage: View {
             
             
             VStack{
+                Spacer()
                 
                 
-                Text("Whattup")
-                    .foregroundColor(Color.white)
+                NavigationLink(destination: HomeScreen()) {
+                    
+                    
+                    Text("4x4").font(.custom("ArcadeClassic", size: 50)).foregroundColor(Color.white)
+                
+
+                }
+                Spacer()
+                NavigationLink(destination: HomeScreen()) {
+                    
+                    
+                    Text("5x5").font(.custom("ArcadeClassic", size: 50)).foregroundColor(Color.white)
+                
+
+                }
+                Spacer()
+                NavigationLink(destination: HomeScreen()) {
+                    
+                    
+                    Text("6x6").font(.custom("ArcadeClassic", size: 50)).foregroundColor(Color.white)
+                
+
+                }
+                Spacer()
                 
                 
               

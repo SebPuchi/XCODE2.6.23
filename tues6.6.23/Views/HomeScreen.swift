@@ -32,17 +32,19 @@ struct HomeScreen: View {
                 NavigationLink(destination: SelectionPage()) {
                     
                     
-                    Image("BeginRed").resizable().scaledToFit().frame(width: 175.0
+                    Image("BeginRed").resizable().scaledToFit().frame(width: 250.0
                     )
 
-                }.padding(.bottom, 15.0)
+                }.padding(.bottom, 20.0)
                 
                 NavigationLink(destination: PalleteSelection()) {
                     
                     
-                    Image("PaletteRed").resizable().scaledToFit().frame(width: 175.0)
+                    Image("PaletteRed").resizable().scaledToFit().frame(width: 315.0)
 
                 }
+                
+                
     
                 
                 
