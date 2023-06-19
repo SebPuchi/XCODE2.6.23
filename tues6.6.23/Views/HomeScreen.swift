@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    //Color selection Enviroment Object
+    @EnvironmentObject var colorObejct: ColorSelect
+    
+    
+    
+    
     var body: some View {
         
+
         NavigationView{
 
         
@@ -30,9 +38,9 @@ struct HomeScreen: View {
              
                 
                 NavigationLink(destination: SelectionPage()) {
+                   
                     
-                    
-                    Image("BeginRed").resizable().scaledToFit().frame(width: 250.0
+                    Image("Begin"+colorObejct.getColor()).resizable().scaledToFit().frame(width: 250.0
                     )
 
                 }.padding(.bottom, 20.0)
@@ -40,7 +48,7 @@ struct HomeScreen: View {
                 NavigationLink(destination: PalleteSelection()) {
                     
                     
-                    Image("PaletteRed").resizable().scaledToFit().frame(width: 315.0)
+                    Image("Palette"+colorObejct.getColor()).resizable().scaledToFit().frame(width: 315.0)
 
                 }
                 
@@ -75,7 +83,7 @@ struct HomeScreen: View {
           
                 
                 
-            }
+        }
             
      
           
@@ -85,25 +93,16 @@ struct HomeScreen: View {
     
     }
     
-    init(){
-        
-        for familyName in UIFont.familyNames{
-            
-            print(familyName)
-            
-            for fontName in UIFont.fontNames(forFamilyName: familyName){
-                
-                print("-- \(fontName)")
-                
-            }
-            
-        }
-        
-        
-        
-    }
+ 
     
 }
+
+
+
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

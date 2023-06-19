@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct tues6_6_23App: App {
+    @StateObject private var colorChoice = ColorSelect()
+    
+  
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            HomeScreen().environmentObject(colorChoice)
            
         }
         

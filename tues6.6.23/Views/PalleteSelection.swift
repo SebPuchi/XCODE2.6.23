@@ -8,10 +8,48 @@
 import SwiftUI
 
 struct PalleteSelection: View {
+    
+    @EnvironmentObject var colorObejct: ColorSelect
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color(.black).ignoresSafeArea()
+            
+            VStack{
+                
+                HStack{
+                   
+                    Text("Complete    all    three    Daily    Challeges    to    unlock    a    new    Palette   Color  !")
+                        .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 25)).multilineTextAlignment(.center)
+                  
+                }
+                Button(action: {
+                    
+                    colorObejct.setColor(newChoice:"Blue")
+                            }) {
+                                Text("Change Color to Blue")
+                                    .padding()
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                            }
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+        }
+        
     }
+    
 }
+
+
 
 struct PalleteSelection_Previews: PreviewProvider {
     static var previews: some View {
