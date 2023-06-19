@@ -9,13 +9,14 @@ import SwiftUI
 
 struct PalleteSelection: View {
     
-    @EnvironmentObject var colorObejct: ColorSelect
+    @EnvironmentObject var colorSelect: ColorSelect
     
     var body: some View {
         ZStack{
             Color(.black).ignoresSafeArea()
             
             VStack{
+                Spacer()
                 
                 HStack{
                    
@@ -25,7 +26,7 @@ struct PalleteSelection: View {
                 }
                 Button(action: {
                     
-                    colorObejct.setColor(newChoice:"Blue")
+                    colorSelect.setColor(newChoice:"Blue")
                             }) {
                                 Text("Change Color to Blue")
                                     .padding()
@@ -34,10 +35,24 @@ struct PalleteSelection: View {
                                     .background(Color.blue)
                                     .cornerRadius(10)
                             }
+                Spacer()
                 
+                Button(action: {
+                    
+                    colorSelect.setColor(newChoice:"Red")
+                            }) {
+                                Text("Change Color back to Red")
+                                    .padding()
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .background(Color.red)
+                                    .cornerRadius(10)
+                            }
+                Spacer()
                 
                 
             }
+            
             
             
             
@@ -53,6 +68,6 @@ struct PalleteSelection: View {
 
 struct PalleteSelection_Previews: PreviewProvider {
     static var previews: some View {
-        PalleteSelection()
+        PalleteSelection() .environmentObject(ColorSelect())
     }
 }
