@@ -11,6 +11,8 @@ struct PalleteSelection: View {
     
     @EnvironmentObject var colorSelect: ColorSelect
     
+    let buttonColors = ["Red", "Blue", "Yellow", "Purple", "Green", "Orange", "Pink"]
+    
     var body: some View {
         ZStack{
             Color(.black).ignoresSafeArea()
@@ -18,37 +20,47 @@ struct PalleteSelection: View {
             VStack{
                 Spacer()
                 
-                HStack{
+                
+                
                    
                     Text("Complete    all    three    Daily    Challeges    to    unlock    a    new    Palette   Color  !")
-                        .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 25)).multilineTextAlignment(.center)
-                  
-                }
-                Button(action: {
-                    
-                    colorSelect.setColor(newChoice:"Blue")
-                            }) {
-                                Text("Change Color to Blue")
-                                    .padding()
-                                    .font(.title)
-                                    .foregroundColor(.white)
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
-                            }
-                Spacer()
+                    .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 25)).multilineTextAlignment(.center).padding(.vertical, 100.0)
+        
                 
-                Button(action: {
-                    
-                    colorSelect.setColor(newChoice:"Red")
-                            }) {
-                                Text("Change Color back to Red")
-                                    .padding()
-                                    .font(.title)
-                                    .foregroundColor(.white)
-                                    .background(Color.red)
-                                    .cornerRadius(10)
+                //I want this to eventually be an image with shadows
+                Text("Selection")
+                .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 35)).multilineTextAlignment(.center)
+                
+                  
+          
+               
+              
+                
+                GeometryReader { geometry in
+                    ScrollView {
+                        VStack(alignment: .center) {
+                            ForEach(buttonColors, id: \.self) { title in
+                                Button(action: {
+                                    colorSelect.setColor(newChoice: title)
+                                    print("Button \(title) tapped.")
+                                }) {
+                                    Text(title).font(.custom("ArcadeClassic", size: 35))
+                                        .padding()
+                                        .foregroundColor(Color.fromString(title))
+                                    
+                                        .frame(width:  geometry.size.width)
+                                        .cornerRadius(10)
+                                        .background(
+                                            Rectangle()
+                                                .stroke(Color.white, lineWidth: 2) // White frame
+                                        )
+                                }
+                                .padding(.vertical, 5)
                             }
-                Spacer()
+                            
+                        }
+                    }
+                }
                 
                 
             }
