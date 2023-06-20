@@ -49,10 +49,9 @@ struct PalleteSelection: View {
                                         .foregroundColor(Color.fromString(title))
                                     
                                         .frame(width:  geometry.size.width)
-                                        .cornerRadius(10)
                                         .background(
                                             Rectangle()
-                                                .stroke(Color.white, lineWidth: 2) // White frame
+                                                .stroke(Color.white, lineWidth: 5) // White frame
                                         )
                                 }
                                 .padding(.vertical, 5)
