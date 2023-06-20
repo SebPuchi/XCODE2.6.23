@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    //Color selection Enviroment Object
-    @EnvironmentObject var colorSelect: ColorSelect
+    
+    @EnvironmentObject var settings: UserSettings
     
     
     
@@ -40,7 +40,7 @@ struct HomeScreen: View {
                 NavigationLink(destination: SelectionPage()) {
                    
                     
-                    Image("Begin"+colorSelect.getColor()).resizable().scaledToFit().frame(width: 250.0
+                    Image("Begin"+settings.selectedColorLoad).resizable().scaledToFit().frame(width: 250.0
                     )
 
                 }.padding(.bottom, 20.0)
@@ -48,7 +48,7 @@ struct HomeScreen: View {
                 NavigationLink(destination: PalleteSelection()) {
                     
                     
-                    Image("Palette"+colorSelect.getColor()).resizable().scaledToFit().frame(width: 315.0)
+                    Image("Palette"+settings.selectedColorLoad).resizable().scaledToFit().frame(width: 315.0)
 
                 }
                 
@@ -102,6 +102,6 @@ struct HomeScreen: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen() .environmentObject(ColorSelect())
+        HomeScreen().environmentObject(UserSettings())
     }
 }

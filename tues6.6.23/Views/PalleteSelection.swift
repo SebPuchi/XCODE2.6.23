@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PalleteSelection: View {
     
-    @EnvironmentObject var colorSelect: ColorSelect
+    
+    @EnvironmentObject var settings: UserSettings
     
     let buttonColors = ["Red", "Blue", "Yellow", "Purple", "Green", "Orange", "Pink"]
     
@@ -41,8 +42,13 @@ struct PalleteSelection: View {
                         VStack(alignment: .center) {
                             ForEach(buttonColors, id: \.self) { title in
                                 Button(action: {
-                                    colorSelect.setColor(newChoice: title)
-                                    print("Button \(title) tapped.")
+                                    
+                                    settings.selectedColorLoad = title
+
+    
+                                    
+                                    
+                                    
                                 }) {
                                     Text(title).font(.custom("ArcadeClassic", size: 35))
                                         .padding()
@@ -79,6 +85,7 @@ struct PalleteSelection: View {
 
 struct PalleteSelection_Previews: PreviewProvider {
     static var previews: some View {
-        PalleteSelection() .environmentObject(ColorSelect())
+        PalleteSelection()
+.environmentObject(UserSettings())
     }
 }

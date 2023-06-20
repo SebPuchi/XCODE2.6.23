@@ -2,9 +2,16 @@
 //  ColorHelperFunc.swift
 //  tues6.6.23
 //
-//  Created by Sebastian Pucher on 6/19/23.
+//  Created by Sebastian Pucher on 6/20/23.
 //
 
+import Foundation
+//
+//  ColorHelperFunc.swift
+//  tues6.6.23
+//
+//  Created by Sebastian Pucher on 6/19/23.
+//
 import Foundation
 
 import SwiftUI
@@ -27,12 +34,11 @@ extension Color {
         case "Pink":
             return .pink
 
-        
+
         default:
             return .red
-            
-            
+
+
         }
     }
 }
-
