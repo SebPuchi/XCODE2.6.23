@@ -71,19 +71,32 @@ struct PalleteSelection: View {
             
 
                     }) {
-                        Text(colorTypes[0].displayColor).font(.custom("ArcadeClassic", size: 35))
-                                .padding()
-                                .foregroundColor(colorTypes[0].color)
-                                .frame(width:  geometry.size.width)
-                                .background(
-                                    Rectangle()
-                                    .stroke(Color.white, lineWidth: 5) // White frame
-                                )}
+                        
+                        if settings.selectedColorLoad == colorTypes[0].name {
+                            Text(colorTypes[0].selectedName).font(.custom("ArcadeClassic", size: 35))
+                                    .padding()
+                                    .foregroundColor(colorTypes[0].color)
+                                    .frame(width:  geometry.size.width)
+                                    .background(
+                                        Rectangle()
+                                        .stroke(Color.white, lineWidth: 5) // White frame
+                                    )
+                                    } else {
+                                        Text(colorTypes[0].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                .padding()
+                                                .foregroundColor(colorTypes[0].color)
+                                                .frame(width:  geometry.size.width)
+                                                .background(
+                                                    Rectangle()
+                                                    .stroke(Color.white, lineWidth: 5) // White frame
+                                                )
+                                    }
+                        
+                    } // Red end
                             
+                            //Blue
                             
-                            
-                            // Blue
-                            
+                            //Blue
                             Button(action: {
                                 //Changes load color setting
                                 settings.selectedColorLoad = colorTypes[1].name
@@ -99,14 +112,28 @@ struct PalleteSelection: View {
                 
 
                         }) {
-                            Text(colorTypes[1].displayColor).font(.custom("ArcadeClassic", size: 35))
-                                    .padding()
-                                    .foregroundColor(colorTypes[1].color)
-                                    .frame(width:  geometry.size.width)
-                                    .background(
-                                        Rectangle()
-                                        .stroke(Color.white, lineWidth: 5) // White frame
-                                    )}
+                            
+                            if settings.selectedColorLoad == colorTypes[1].name {
+                                Text(colorTypes[1].selectedName).font(.custom("ArcadeClassic", size: 35))
+                                        .padding()
+                                        .foregroundColor(colorTypes[1].color)
+                                        .frame(width:  geometry.size.width)
+                                        .background(
+                                            Rectangle()
+                                            .stroke(Color.white, lineWidth: 5) // White frame
+                                        )
+                                        } else {
+                                            Text(colorTypes[1].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                    .padding()
+                                                    .foregroundColor(colorTypes[1].color)
+                                                    .frame(width:  geometry.size.width)
+                                                    .background(
+                                                        Rectangle()
+                                                        .stroke(Color.white, lineWidth: 5) // White frame
+                                                    )
+                                        }
+                            
+                        } // Blue end
                         
                             
                             
