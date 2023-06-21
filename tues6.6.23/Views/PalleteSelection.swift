@@ -93,9 +93,7 @@ struct PalleteSelection: View {
                                     }
                         
                     } // Red end
-                            
-                            //Blue
-                            
+                   
                             //Blue
                             Button(action: {
                                 //Changes load color setting
@@ -134,6 +132,45 @@ struct PalleteSelection: View {
                                         }
                             
                         } // Blue end
+                            
+                            //Yellow
+                            Button(action: {
+                                //Changes load color setting
+                                settings.selectedColorLoad = colorTypes[2].name
+                                
+                                
+                                // will loop through all objects and change thier displayColor to "unselected" (Normal)
+                                for index in colorTypes.indices {
+                                    colorTypes[index].displayColor = colorTypes[index].name
+                                }
+                                
+                                //Changes color name to selected color (visual)
+                                colorTypes[2].displayColor =  colorTypes[2].selectedName
+                
+
+                        }) {
+                            
+                            if settings.selectedColorLoad == colorTypes[2].name {
+                                Text(colorTypes[2].selectedName).font(.custom("ArcadeClassic", size: 35))
+                                        .padding()
+                                        .foregroundColor(colorTypes[2].color)
+                                        .frame(width:  geometry.size.width)
+                                        .background(
+                                            Rectangle()
+                                            .stroke(Color.white, lineWidth: 5) // White frame
+                                        )
+                                        } else {
+                                            Text(colorTypes[2].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                    .padding()
+                                                    .foregroundColor(colorTypes[2].color)
+                                                    .frame(width:  geometry.size.width)
+                                                    .background(
+                                                        Rectangle()
+                                                        .stroke(Color.white, lineWidth: 5) // White frame
+                                                    )
+                                        }
+                            
+                        } // Yellow end
                         
                             
                             

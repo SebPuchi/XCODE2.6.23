@@ -24,7 +24,7 @@ struct SelectionPage: View {
                 Spacer()
                 
                 
-                NavigationLink(destination: _x4()) {
+                NavigationLink(destination: FourxFour()) {
                     
                     
                     Text("4x4").font(.custom("ArcadeClassic", size: 50)).foregroundColor(Color.white)
@@ -32,7 +32,7 @@ struct SelectionPage: View {
 
                 }
                 Spacer()
-                NavigationLink(destination: _x5()) {
+                NavigationLink(destination: FivexFive()) {
                     
                     
                     Text("5x5").font(.custom("ArcadeClassic", size: 50)).foregroundColor(Color.white)
@@ -40,7 +40,7 @@ struct SelectionPage: View {
 
                 }
                 Spacer()
-                NavigationLink(destination: _x6()) {
+                NavigationLink(destination: SixxSix()) {
                     
                     
                     Text("6x6").font(.custom("ArcadeClassic", size: 50)).foregroundColor(Color.white)
