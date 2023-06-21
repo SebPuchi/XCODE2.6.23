@@ -19,5 +19,10 @@ class UserSettings: ObservableObject {
     init() {
         self.selectedColorLoad = UserDefaults.standard.string(forKey: "SelectedColorLoad") ?? "Red"
     }
+    
+    func resetUserDefaults() {
+            UserDefaults.standard.removeObject(forKey: "SelectedColorLoad")
+            selectedColorLoad = "Red"
+        }
 }
 
