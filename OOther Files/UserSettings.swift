@@ -15,14 +15,28 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(selectedColorLoad, forKey: "SelectedColorLoad")
         }
     }
-
+    
+    @Published var amtColorsUnlocked: Int {
+        didSet {
+            UserDefaults.standard.set(amtColorsUnlocked, forKey: "IntValue")
+        }
+    }
+    
     init() {
         self.selectedColorLoad = UserDefaults.standard.string(forKey: "SelectedColorLoad") ?? "Red"
+        self.amtColorsUnlocked = UserDefaults.standard.integer(forKey: "IntValue")
+        
+        if self.amtColorsUnlocked == 0 {
+            self.amtColorsUnlocked = 0
+            UserDefaults.standard.set(self.amtColorsUnlocked, forKey: "IntValue")
+        }
     }
     
     func resetUserDefaults() {
-            UserDefaults.standard.removeObject(forKey: "SelectedColorLoad")
-            selectedColorLoad = "Red"
-        }
+        UserDefaults.standard.removeObject(forKey: "SelectedColorLoad")
+        UserDefaults.standard.removeObject(forKey: "IntValue")
+        
+        selectedColorLoad = "Red"
+        amtColorsUnlocked = 0
+    }
 }
-

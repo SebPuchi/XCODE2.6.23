@@ -16,6 +16,19 @@ struct _x4: View {
         
         Text("4x4").font(.custom("ArcadeClassic", size: 20))
         
+        
+        
+        Button(action: {
+            // Perform your action here
+            settings.amtColorsUnlocked+=1
+            
+            print(" "+String(settings.amtColorsUnlocked))
+      
+        }) {
+            Text("add")
+        }
+        
+        
         Button(action: {
             // Perform your action here
             settings.resetUserDefaults()
