@@ -11,9 +11,9 @@ import SwiftUI
 struct ColorModel {
     let name: String
     let color: Color
-    var isUnlocked: Bool
     let selectedName: String
     let colorNum: Int
+    var displayColor: String
     
     
     

@@ -12,7 +12,20 @@ struct PalleteSelection: View {
     
     @EnvironmentObject var settings: UserSettings
     
-    let buttonColors = ["Red", "Blue", "Yellow", "Purple", "Green", "Orange", "Pink"]
+    
+    
+    
+    @State private var colorTypes: [ColorModel] = [
+           ColorModel(name: "Red", color: .red, selectedName: "| |              Red              | |", colorNum: 0, displayColor: "Red"),
+           ColorModel(name: "Blue", color: .blue, selectedName: "| |              Blue              | |", colorNum: 1, displayColor: "Blue"),
+           ColorModel(name: "Yellow", color: .yellow, selectedName: "| |              Yellow              | |", colorNum: 2, displayColor: "Yellow"),
+           ColorModel(name: "Purple", color: .purple, selectedName: "| |              Purple              | |", colorNum: 3, displayColor: "Purple"),
+           ColorModel(name: "Green", color: .green, selectedName: "| |              Green              | |", colorNum: 4, displayColor: "Green"),
+           ColorModel(name: "Orange", color: .orange, selectedName: "| |              Orange              | |", colorNum: 5, displayColor: "Orange"),
+           ColorModel(name: "Pink", color: .pink, selectedName: "| |              Pink              | |", colorNum: 6, displayColor: "Pink"),
+       ]
+    
+
     
     var body: some View {
         ZStack{
@@ -30,7 +43,7 @@ struct PalleteSelection: View {
                 
                 //I want this to eventually be an image with shadows
                 Text("Selection")
-                .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 35)).multilineTextAlignment(.center)
+                    .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 35)).multilineTextAlignment(.center)
                 
                   
           
@@ -40,30 +53,67 @@ struct PalleteSelection: View {
                 GeometryReader { geometry in
                     ScrollView {
                         VStack(alignment: .center) {
-                            ForEach(buttonColors, id: \.self) { title in
-                                Button(action: {
-                                    
-                                    settings.selectedColorLoad = title
-
-    
-                                    
-                                    
-                                    
-                                }) {
-                                    Text(title).font(.custom("ArcadeClassic", size: 35))
-                                        .padding()
-                                        .foregroundColor(Color.fromString(title))
-                                    
-                                        .frame(width:  geometry.size.width)
-                                        .background(
-                                            Rectangle()
-                                                .stroke(Color.white, lineWidth: 5) // White frame
-                                        )
-                                }
-                                .padding(.vertical, 5)
+                        
+                            
+                        //Red
+                        Button(action: {
+                            //Changes load color setting
+                            settings.selectedColorLoad = colorTypes[0].name
+                            
+                            
+                            // will loop through all objects and change thier displayColor to "unselected" (Normal)
+                            for index in colorTypes.indices {
+                                colorTypes[index].displayColor = colorTypes[index].name
                             }
                             
+                            //Changes color name to selected color (visual)
+                            colorTypes[0].displayColor =  colorTypes[0].selectedName
+            
+
+                    }) {
+                        Text(colorTypes[0].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                .padding()
+                                .foregroundColor(colorTypes[0].color)
+                                .frame(width:  geometry.size.width)
+                                .background(
+                                    Rectangle()
+                                    .stroke(Color.white, lineWidth: 5) // White frame
+                                )}
+                            
+                            
+                            
+                            // Blue
+                            
+                            Button(action: {
+                                //Changes load color setting
+                                settings.selectedColorLoad = colorTypes[1].name
+                                
+                                
+                                // will loop through all objects and change thier displayColor to "unselected" (Normal)
+                                for index in colorTypes.indices {
+                                    colorTypes[index].displayColor = colorTypes[index].name
+                                }
+                                
+                                //Changes color name to selected color (visual)
+                                colorTypes[1].displayColor =  colorTypes[1].selectedName
+                
+
+                        }) {
+                            Text(colorTypes[1].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                    .padding()
+                                    .foregroundColor(colorTypes[1].color)
+                                    .frame(width:  geometry.size.width)
+                                    .background(
+                                        Rectangle()
+                                        .stroke(Color.white, lineWidth: 5) // White frame
+                                    )}
+                        
+                            
+                            
+                               
+                            
                         }
+                            
                     }
                 }
                 
