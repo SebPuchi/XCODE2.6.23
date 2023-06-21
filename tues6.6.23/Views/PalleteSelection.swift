@@ -52,37 +52,31 @@ struct PalleteSelection: View {
                 
                 GeometryReader { geometry in
                     ScrollView {
-                        VStack(alignment: .center) {
+                        VStack(alignment: .center,spacing: 15) {
+//******************************************************************************************************************************
+                            
+                            //Red
+                                
+                                
+                                if colorTypes[0].colorNum<=settings.amtColorsUnlocked{
+                                    Button(action: {
+                                        //Changes load color setting
+                                        settings.selectedColorLoad = colorTypes[0].name
+                                        
+                                        
+                                        // will loop through all objects and change thier displayColor to "unselected" (Normal)
+                                        for index in colorTypes.indices {
+                                            colorTypes[index].displayColor = colorTypes[index].name
+                                        }
+                                        
+                                        //Changes color name to selected color (visual)
+                                        colorTypes[0].displayColor =  colorTypes[0].selectedName
                         
-                            
-                        //Red
-                        Button(action: {
-                            //Changes load color setting
-                            settings.selectedColorLoad = colorTypes[0].name
-                            
-                            
-                            // will loop through all objects and change thier displayColor to "unselected" (Normal)
-                            for index in colorTypes.indices {
-                                colorTypes[index].displayColor = colorTypes[index].name
-                            }
-                            
-                            //Changes color name to selected color (visual)
-                            colorTypes[0].displayColor =  colorTypes[0].selectedName
-            
 
-                    }) {
-                        
-                        if settings.selectedColorLoad == colorTypes[0].name {
-                            Text(colorTypes[0].selectedName).font(.custom("ArcadeClassic", size: 35))
-                                    .padding()
-                                    .foregroundColor(colorTypes[0].color)
-                                    .frame(width:  geometry.size.width)
-                                    .background(
-                                        Rectangle()
-                                        .stroke(Color.white, lineWidth: 5) // White frame
-                                    )
-                                    } else {
-                                        Text(colorTypes[0].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                }) {
+                                    
+                                    if settings.selectedColorLoad == colorTypes[0].name {
+                                        Text(colorTypes[0].selectedName).font(.custom("ArcadeClassic", size: 35))
                                                 .padding()
                                                 .foregroundColor(colorTypes[0].color)
                                                 .frame(width:  geometry.size.width)
@@ -90,87 +84,178 @@ struct PalleteSelection: View {
                                                     Rectangle()
                                                     .stroke(Color.white, lineWidth: 5) // White frame
                                                 )
-                                    }
-                        
-                    } // Red end
-                   
+                                                } else {
+                                                    Text(colorTypes[0].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                            .padding()
+                                                            .foregroundColor(colorTypes[0].color)
+                                                            .frame(width:  geometry.size.width)
+                                                            .background(
+                                                                Rectangle()
+                                                                .stroke(Color.white, lineWidth: 5) // White frame
+                                                            )
+                                                }
+                                    
+                                } // Red end
+                                    
+                                    
+                                    
+                                }
+                                
+                                
+                                else{
+                                    
+                                    Button(action: {}) {
+                                        Text(colorTypes[0].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                .padding()
+                                                .foregroundColor(Color.gray)
+                                                .frame(width:  geometry.size.width)
+                                                .background(
+                                                    Rectangle()
+                                                    .stroke(Color.gray, lineWidth: 5) // White frame
+                                                )
+                                            }
+                                            .disabled(true)
+                                    
+                                    
+                                    
+                                }
+                            
+//******************************************************************************************************************************
+
                             //Blue
-                            Button(action: {
-                                //Changes load color setting
-                                settings.selectedColorLoad = colorTypes[1].name
                                 
                                 
-                                // will loop through all objects and change thier displayColor to "unselected" (Normal)
-                                for index in colorTypes.indices {
-                                    colorTypes[index].displayColor = colorTypes[index].name
+                                if colorTypes[1].colorNum<=settings.amtColorsUnlocked{
+                                    Button(action: {
+                                        //Changes load color setting
+                                        settings.selectedColorLoad = colorTypes[1].name
+                                        
+                                        
+                                        // will loop through all objects and change thier displayColor to "unselected" (Normal)
+                                        for index in colorTypes.indices {
+                                            colorTypes[index].displayColor = colorTypes[index].name
+                                        }
+                                        
+                                        //Changes color name to selected color (visual)
+                                        colorTypes[1].displayColor =  colorTypes[1].selectedName
+                        
+
+                                }) {
+                                    
+                                    if settings.selectedColorLoad == colorTypes[1].name {
+                                        Text(colorTypes[1].selectedName).font(.custom("ArcadeClassic", size: 35))
+                                                .padding()
+                                                .foregroundColor(colorTypes[1].color)
+                                                .frame(width:  geometry.size.width)
+                                                .background(
+                                                    Rectangle()
+                                                    .stroke(Color.white, lineWidth: 5) // White frame
+                                                )
+                                                } else {
+                                                    Text(colorTypes[1].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                            .padding()
+                                                            .foregroundColor(colorTypes[1].color)
+                                                            .frame(width:  geometry.size.width)
+                                                            .background(
+                                                                Rectangle()
+                                                                .stroke(Color.white, lineWidth: 5) // White frame
+                                                            )
+                                                }
+                                    
+                                } // Blue end
+                                    
+                                    
+                                    
                                 }
                                 
-                                //Changes color name to selected color (visual)
-                                colorTypes[1].displayColor =  colorTypes[1].selectedName
-                
-
-                        }) {
-                            
-                            if settings.selectedColorLoad == colorTypes[1].name {
-                                Text(colorTypes[1].selectedName).font(.custom("ArcadeClassic", size: 35))
-                                        .padding()
-                                        .foregroundColor(colorTypes[1].color)
-                                        .frame(width:  geometry.size.width)
-                                        .background(
-                                            Rectangle()
-                                            .stroke(Color.white, lineWidth: 5) // White frame
-                                        )
-                                        } else {
-                                            Text(colorTypes[1].displayColor).font(.custom("ArcadeClassic", size: 35))
-                                                    .padding()
-                                                    .foregroundColor(colorTypes[1].color)
-                                                    .frame(width:  geometry.size.width)
-                                                    .background(
-                                                        Rectangle()
-                                                        .stroke(Color.white, lineWidth: 5) // White frame
-                                                    )
-                                        }
-                            
-                        } // Blue end
-                            
-                            //Yellow
-                            Button(action: {
-                                //Changes load color setting
-                                settings.selectedColorLoad = colorTypes[2].name
                                 
-                                
-                                // will loop through all objects and change thier displayColor to "unselected" (Normal)
-                                for index in colorTypes.indices {
-                                    colorTypes[index].displayColor = colorTypes[index].name
+                                else{
+                                    
+                                    Button(action: {}) {
+                                        Text(colorTypes[1].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                .padding()
+                                                .foregroundColor(Color.gray)
+                                                .frame(width:  geometry.size.width)
+                                                .background(
+                                                    Rectangle()
+                                                    .stroke(Color.gray, lineWidth: 5) // White frame
+                                                )
+                                            }
+                                            .disabled(true)
+                                    
+                                    
+                                    
                                 }
-                                
-                                //Changes color name to selected color (visual)
-                                colorTypes[2].displayColor =  colorTypes[2].selectedName
-                
+                            
+                          
+//******************************************************************************************************************************
+                        //Yellow
+                            
+                            
+                            if colorTypes[2].colorNum<=settings.amtColorsUnlocked{
+                                Button(action: {
+                                    //Changes load color setting
+                                    settings.selectedColorLoad = colorTypes[2].name
+                                    
+                                    
+                                    // will loop through all objects and change thier displayColor to "unselected" (Normal)
+                                    for index in colorTypes.indices {
+                                        colorTypes[index].displayColor = colorTypes[index].name
+                                    }
+                                    
+                                    //Changes color name to selected color (visual)
+                                    colorTypes[2].displayColor =  colorTypes[2].selectedName
+                    
 
-                        }) {
+                            }) {
+                                
+                                if settings.selectedColorLoad == colorTypes[2].name {
+                                    Text(colorTypes[2].selectedName).font(.custom("ArcadeClassic", size: 35))
+                                            .padding()
+                                            .foregroundColor(colorTypes[2].color)
+                                            .frame(width:  geometry.size.width)
+                                            .background(
+                                                Rectangle()
+                                                .stroke(Color.white, lineWidth: 5) // White frame
+                                            )
+                                            } else {
+                                                Text(colorTypes[2].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                                        .padding()
+                                                        .foregroundColor(colorTypes[2].color)
+                                                        .frame(width:  geometry.size.width)
+                                                        .background(
+                                                            Rectangle()
+                                                            .stroke(Color.white, lineWidth: 5) // White frame
+                                                        )
+                                            }
+                                
+                            } // Yellow end
+                                
+                                
+                                
+                            }
                             
-                            if settings.selectedColorLoad == colorTypes[2].name {
-                                Text(colorTypes[2].selectedName).font(.custom("ArcadeClassic", size: 35))
-                                        .padding()
-                                        .foregroundColor(colorTypes[2].color)
-                                        .frame(width:  geometry.size.width)
-                                        .background(
-                                            Rectangle()
-                                            .stroke(Color.white, lineWidth: 5) // White frame
-                                        )
-                                        } else {
-                                            Text(colorTypes[2].displayColor).font(.custom("ArcadeClassic", size: 35))
-                                                    .padding()
-                                                    .foregroundColor(colorTypes[2].color)
-                                                    .frame(width:  geometry.size.width)
-                                                    .background(
-                                                        Rectangle()
-                                                        .stroke(Color.white, lineWidth: 5) // White frame
-                                                    )
+                            
+                            else{
+                                
+                                Button(action: {}) {
+                                    Text(colorTypes[2].displayColor).font(.custom("ArcadeClassic", size: 35))
+                                            .padding()
+                                            .foregroundColor(Color.gray)
+                                            .frame(width:  geometry.size.width)
+                                            .background(
+                                                Rectangle()
+                                                .stroke(Color.gray, lineWidth: 5) // White frame
+                                            )
                                         }
+                                        .disabled(true)
+                                
+                                
+                                
+                            }
                             
-                        } // Yellow end
+  //*********************************************************************************************************************************
+                          
                         
                             
                             
