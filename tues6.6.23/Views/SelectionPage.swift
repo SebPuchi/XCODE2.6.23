@@ -86,7 +86,7 @@ struct SelectionPage: View {
 struct SelectionPage_Previews: PreviewProvider {
     static var previews: some View {
         
-        SelectionPage()
+        SelectionPage().environmentObject(UserSettings())
         
     }
 }
