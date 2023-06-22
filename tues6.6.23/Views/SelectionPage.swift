@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectionPage: View {
     
-
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         
@@ -61,6 +61,22 @@ struct SelectionPage: View {
             
             
             
+        }.onAppear {
+            // Perform the desired action here
+            if settings.fourWonToday && settings.fiveWonToday && settings.sixWonToday && settings.amtColorsUnlocked<=7 {
+                
+                
+                
+                settings.amtColorsUnlocked += 1
+                
+                settings.fourWonToday = false
+                settings.fiveWonToday = false
+                settings.sixWonToday = false
+                
+                // this is where we'd congradulate the user for unlocking new color.
+                // Must also make the buttons to submitt Cross unusable after.
+            }
+          
         }
         
         

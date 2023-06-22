@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct FourxFour: View {
+    
+    
     @EnvironmentObject var settings: UserSettings
     
     
@@ -16,8 +18,7 @@ struct FourxFour: View {
         
         
         Button(action: {
-            settings.amtColorsUnlocked =  settings.amtColorsUnlocked+1
-            print(settings.amtColorsUnlocked)
+            settings.fourWonToday =  true
                    
                }) {
                    Text("add")
@@ -27,7 +28,7 @@ struct FourxFour: View {
                        .background(Color.blue)
                        .cornerRadius(10)
                }
-        
+        Spacer()
         Button(action: {
             settings.resetUserDefaults()
                    

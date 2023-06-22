@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct FivexFive: View {
+    @EnvironmentObject var settings: UserSettings
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button(action: {
+            settings.fiveWonToday =  true
+                   
+               }) {
+                   Text("add")
+                       .font(.title)
+                       .foregroundColor(.white)
+                       .padding()
+                       .background(Color.blue)
+                       .cornerRadius(10)
+               }
     }
 }
 
