@@ -49,6 +49,7 @@ struct HomeScreen: View {
                     
                     
                     Image("Palette"+settings.selectedColorLoad).resizable().scaledToFit().frame(width: 315.0)
+                    
 
                 }
                 
@@ -83,7 +84,7 @@ struct HomeScreen: View {
           
                 
                 
-        }
+        }.onAppear{print(settings.fourWonToday)}
             
      
           

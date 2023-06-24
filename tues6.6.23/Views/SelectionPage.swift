@@ -11,6 +11,7 @@ struct SelectionPage: View {
     
     @EnvironmentObject var settings: UserSettings
     
+    
     var body: some View {
         
         
@@ -72,6 +73,7 @@ struct SelectionPage: View {
                 settings.fourWonToday = false
                 settings.fiveWonToday = false
                 settings.sixWonToday = false
+                
                 
                 // this is where we'd congradulate the user for unlocking new color.
                 // Must also make the buttons to submitt Cross unusable after.
