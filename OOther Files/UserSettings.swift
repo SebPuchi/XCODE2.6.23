@@ -56,6 +56,10 @@ class UserSettings: ObservableObject {
         startMidnightTimer()
     }
     
+    // Not working
+    
+    
+    
     private func startMidnightTimer() {
         let calendar = Calendar.current
         let now = Date()
