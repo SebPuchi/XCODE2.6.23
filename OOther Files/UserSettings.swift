@@ -39,7 +39,6 @@ class UserSettings: ObservableObject {
         }
     }
     
-    private var timer: Timer?
     
     init() {
         self.fourWonToday = UserDefaults.standard.bool(forKey: "fourWonToday")
@@ -53,37 +52,10 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(self.amtColorsUnlocked, forKey: "IntValue")
         }
         
-        startMidnightTimer()
+
     }
     
-    // Not working
-    
-    
-    
-    private func startMidnightTimer() {
-        let calendar = Calendar.current
-        let now = Date()
-        
-        var components = calendar.dateComponents(in: TimeZone(identifier: "America/New_York")!, from: now)
-        components.hour = 0
-        components.minute = 0
-        components.second = 0
-        
-        let midnightET = calendar.date(from: components)!
-        
-        if now > midnightET {
-            // If current time is already past midnight ET, add one day to the target date
-            components.day! += 1
-        }
-        
-        let timeInterval = calendar.date(byAdding: .day, value: 1, to: midnightET)!.timeIntervalSinceNow
-        
-        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [weak self] _ in
-            self?.resetWonTodayVariables()
-            self?.startMidnightTimer()
-        }
-    }
-    
+
     private func resetWonTodayVariables() {
         fourWonToday = false
         fiveWonToday = false
