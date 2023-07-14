@@ -66,8 +66,6 @@ struct SelectionPage: View {
             // Perform the desired action here
             if settings.fourWonToday && settings.fiveWonToday && settings.sixWonToday && settings.amtColorsUnlocked<=7 {
                 
-                
-                
                 settings.amtColorsUnlocked += 1
                 
                 settings.fourWonToday = false

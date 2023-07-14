@@ -37,7 +37,7 @@ struct PalleteSelection: View {
                 
                 
                    
-                    Text("Complete    all    three    Daily    Challeges    to    unlock    a    new    Palette   Color  !")
+                    Text("Complete    all    three    Daily    Challeges    to    unlock    a    new    Palette   Color  !  10/11/2003")
                     .foregroundColor(Color.white).font(.custom("ArcadeClassic", size: 25)).multilineTextAlignment(.center).padding(.vertical, 100.0)
         
                 
@@ -521,9 +521,7 @@ struct PalleteSelection: View {
                                 
       //*************************************************************************************************************************
                               
-                            
-                            
-                               
+
                             
                         }
                             
@@ -532,11 +530,7 @@ struct PalleteSelection: View {
                 
                 
             }
-            
-            
-            
-            
-            
+              
             
         }
         

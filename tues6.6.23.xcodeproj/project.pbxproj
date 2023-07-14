@@ -16,6 +16,7 @@
 		9E54717F2A43681300D6F77B /* SixxSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E54717E2A43681300D6F77B /* SixxSix.swift */; };
 		9E59221E2A3BB8BE0053EAD7 /* arc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E59221D2A3BB8BD0053EAD7 /* arc.ttf */; };
 		9E5922232A3CAEA30053EAD7 /* SelectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5922222A3CAEA30053EAD7 /* SelectionPage.swift */; };
+		9E6EC8742A60C99F0002D541 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6EC8732A60C99F0002D541 /* Schedule */; };
 		9ED63EE82A4693A9009A3320 /* CongratsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED63EE72A4693A9009A3320 /* CongratsPage.swift */; };
 		9EEFD0472A2F68580093C4A1 /* tues6_6_23App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEFD0462A2F68580093C4A1 /* tues6_6_23App.swift */; };
 		9EEFD0492A2F68580093C4A1 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEFD0482A2F68580093C4A1 /* HomeScreen.swift */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6EC8742A60C99F0002D541 /* Schedule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +204,9 @@
 			dependencies = (
 			);
 			name = tues6.6.23;
+			packageProductDependencies = (
+				9E6EC8732A60C99F0002D541 /* Schedule */,
+			);
 			productName = tues6.6.23;
 			productReference = 9EEFD0432A2F68580093C4A1 /* tues6.6.23.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +279,9 @@
 				Base,
 			);
 			mainGroup = 9EEFD03A2A2F68580093C4A1;
+			packageReferences = (
+				9E6EC8722A60C99F0002D541 /* XCRemoteSwiftPackageReference "Schedule" */,
+			);
 			productRefGroup = 9EEFD0442A2F68580093C4A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -657,6 +665,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E6EC8722A60C99F0002D541 /* XCRemoteSwiftPackageReference "Schedule" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luoxiu/Schedule.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E6EC8732A60C99F0002D541 /* Schedule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E6EC8722A60C99F0002D541 /* XCRemoteSwiftPackageReference "Schedule" */;
+			productName = Schedule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9EEFD03B2A2F68580093C4A1 /* Project object */;
 }
